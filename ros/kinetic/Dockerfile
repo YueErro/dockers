@@ -59,6 +59,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-in
     tig \
     valgrind \
     docker \
+    docker-ce \
     iputils-ping \
     ipython \
     python-scipy \
@@ -75,6 +76,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y  --no-in
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install --reinstall -y locales  \
     && rm -rf /var/lib/apt/lists/*
+
 # uncomment chosen locale to enable it's generation
 RUN sed -i 's/# en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen \
     ||  echo "en_GB.UTF-8 UTF-8" > /etc/locale.gen

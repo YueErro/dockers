@@ -119,6 +119,10 @@ RUN mkdir -p /home/user/shared/ros/melodic
 WORKDIR /home/user/shared/ros/melodic
 
 ENV ROSCONSOLE_FORMAT='[${severity}] [${time}]: ${message} [${file}:${line}]'
-RUN echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc && \
-    cat /usr/local/bin/gosu_entrypoint.sh >> ~/.bashrc
-ENTRYPOINT ["bash"]
+COPY git.sh /usr/local/bin/git.sh
+
+RUN echo "source /opt/ros/melodic/setup.bash" >> /root/.bashrc \
+    && echo "source /usr/local/bin/gosu_entrypoint.sh" >> /root/.bashrc
+    #&& echo "source /usr/local/bin/git.sh" >> /root/.bashrc
+
+ENTRYPOINT ["/bin/bash"]

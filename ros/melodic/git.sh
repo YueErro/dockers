@@ -143,7 +143,13 @@ if [ ! -z $NO_TIME_IN_PROMPT ]; then
 fi
 IN_DOCKER=""
 if [ -f /.dockerenv ]; then
-  IN_DOCKER="\\033[01;91mDocker\\033[0m"
+  DOCKER="Docker"
+  if [ ! -z $PAL_DISTRO ]; then
+    DOCKER="$PAL_DISTRO"
+  elif [ ! -z $ROS_DISTRO ]; then
+    DOCKER="$ROS_DISTRO"
+  fi
+  IN_DOCKER="\\033[01;91m$DOCKER\\033[0m"
 fi
 COMMAND_PROMPT=$IN_DOCKER'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]'$TIME_IN_PROMPT'\a \[\033[00m\]${ROS_MASTER_URI}'$GIT_PS1'\n\[\033[01;34m\]\w\[\033[00m\]\$ '
 
