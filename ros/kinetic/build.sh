@@ -1,1 +1,3 @@
-docker build --network=host -t ros-kinetic .
+#!/bin/sh
+
+docker build --build-arg USER=$USER -t ros-kinetic .

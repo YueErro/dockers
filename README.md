@@ -1,43 +1,47 @@
 # dockers
-Dokerfile of different ROS distributions
+Dokerfile of different ROS distributions and robots.
 
 ```sh
 # Clone this repository
 git clone git@github.com:YueErro/dockers.git ~/git/dockers
-# Clone submodules
-cd ~/git/dockers
-git submodule update --init --recursive
 ```
 
 ## Table of contents
+* [Requirements](#requirements)
 * [Docker build and run](#docker-build-and-run)
 * [Useful information](#useful-information)
-  - [Submodules](#submodules)
   - [Share files between docker container and host machine](#share-files-between-docker-container-and-host-machine)
   - [New terminal in the same docker container](#new-terminal-in-the-same-docker-container)
+* [References](#references)
 
-## Docker build and run
+### Requirements
+The following debian installation is required to run the dockers:
 ```sh
-cd ros/<ROSdistribution>
+sudo apt-get install python3-rocker
+```
+
+### Docker build and run
+```sh
+cd ~/git/dockers/<"ros/ROSdistro"or"robot/ROSDistro">
 # build
 bash build.sh
-# run
-bash run.sh
+# run according to your graphics card (Nvidia or integrated Intel)
+bash run.sh <nvidia/intel>
 ```
 
 ### Useful information
-#### Submodules
-Quick reference ([1](http://www.vogella.com/tutorials/GitSubmodules/article.html), [2](https://chrisjean.com/git-submodules-adding-using-removing-and-updating/), [3](https://git-scm.com/book/en/v2/Git-Tools-Submodules))
-```sh
-# Pull all the new commits in the submodules
-git pull --recurse-submodules && git submodule update --recursive --remote
-```
 
 #### Share files between docker container and host machine
-These docker containers automatically share a respective folder at: `~/git/dockers/shared`.
+These docker containers automatically share the users home directory. It has been added a shared directory in order to have organized the workspaces used in dockers: `~/git/dockers/shared`
 ```sh
 .
 |__ros
+|   |__kinetic
+|   |__melodic
+|__tiago
+|   |__kinetic
+|   |__melodic
+|__tiago_dual
     |__kinetic
     |__melodic
 ```
@@ -48,3 +52,7 @@ It can be opened as many as wanted terminal in the same docker container by just
 ```sh
 terminator -u &
 ```
+
+### References
+* [docker docs](https://docs.docker.com/engine/install/ubuntu/)
+* [osrf/rocker](https://github.com/osrf/rocker)

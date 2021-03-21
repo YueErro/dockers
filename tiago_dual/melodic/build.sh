@@ -1,1 +1,3 @@
-docker build --network=host -t tiago_dual-melodic .
+#!/bin/sh
+
+docker build -t tiago_dual-melodic .

@@ -1,3 +1,0 @@
-[submodule "pal_docker_utils"]
-	path = pal_docker_utils
-	url = https://github.com/pal-robotics/pal_docker_utils.git

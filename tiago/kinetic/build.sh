@@ -1,1 +1,3 @@
-docker build --network=host -t tiago-kinetic .
+#!/bin/sh
+
+docker build -t tiago-kinetic .

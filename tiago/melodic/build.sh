@@ -1,1 +1,3 @@
-docker build --network=host -t pal-tiago .
+#!/bin/sh
+
+docker build -t tiago-melodic .
