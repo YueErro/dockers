@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build --build-arg USER=$USER -t ros-melodic .
+docker build --build-arg USER=$USER --build-arg IMAGE_NAME="ros-melodic" -t ros-melodic .

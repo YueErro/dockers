@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t tiago_dual-kinetic .
+docker build --build-arg IMAGE_NAME="tiago_dual-kinetic" -t tiago_dual-kinetic .

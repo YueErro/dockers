@@ -5,6 +5,9 @@ LABEL maintainer="Yue Erro <yue.erro@pal-robotics.com>"
 RUN mkdir -p /tiago_dual_public_ws/src
 WORKDIR /tiago_dual_public_ws
 
+ARG IMAGE_NAME
+ENV IMG_NAME=$IMAGE_NAME
+
 RUN apt-get update && apt-get install -y \
     libv4l-dev \
     libv4l2rds0 \

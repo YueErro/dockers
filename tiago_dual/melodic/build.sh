@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t tiago_dual-melodic .
+docker build --build-arg IMAGE_NAME="tiago_dual-melodic" -t tiago_dual-melodic .

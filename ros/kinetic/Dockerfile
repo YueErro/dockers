@@ -1,6 +1,9 @@
 FROM osrf/ros:kinetic-desktop-full
 LABEL maintainer="Yue Erro <yue.trbj@gmail.com>"
 
+ARG IMAGE_NAME
+ENV IMG_NAME=$IMAGE_NAME
+
 ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \

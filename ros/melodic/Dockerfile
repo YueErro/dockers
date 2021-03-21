@@ -2,8 +2,10 @@ FROM osrf/ros:melodic-desktop-full
 
 LABEL maintainer="Yue Erro <yue.trbj@gmail.com>"
 
-ENV ROS_DISTRO melodic
+ARG IMAGE_NAME
+ENV IMG_NAME=$IMAGE_NAME
 
+ENV ROS_DISTRO melodic
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libgl1-mesa-dri \
