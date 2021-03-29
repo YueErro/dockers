@@ -2,8 +2,9 @@ FROM osrf/ros:melodic-desktop-full
 
 LABEL maintainer="Yue Erro <yue.erro@pal-robotics.com>"
 
-RUN mkdir -p /tiago_dual_public_ws/src
-WORKDIR /tiago_dual_public_ws
+ARG REPO_WS=/tiago_dual_public_ws
+RUN mkdir -p $REPO_WS/src
+WORKDIR $REPO_WS
 
 ARG IMAGE_NAME
 ENV IMG_NAME=$IMAGE_NAME
@@ -27,6 +28,6 @@ RUN apt-get update && rosdep install --from-paths src --ignore-src -y --rosdistr
 
 RUN bash -c "source /opt/ros/melodic/setup.bash \
     && catkin build -DCATKIN_ENABLE_TESTING=0 \
-    && echo 'source /tiago_dual_public_ws/devel/setup.bash' >> ~/.bashrc"
+    && echo 'source $REPO_WS/devel/setup.bash' >> ~/.bashrc"
 
 ENTRYPOINT ["bash"]
