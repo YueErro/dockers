@@ -10,11 +10,41 @@ ARG IMAGE_NAME
 ENV IMG_NAME=$IMAGE_NAME
 
 RUN apt-get update && apt-get install -y \
+    apt-utils \
     libv4l-dev \
     libv4l2rds0 \
     git \
     wget \
     vim \
+    locales \
+    dpkg \
+    ssh \
+    curl \
+    aptitude \
+    g++ \
+    gcc \
+    openvpn \
+    gnupg \
+    bash-completion \
+    vim-gnome \
+    nano \
+    psmisc \
+    ccache \
+    gdb \
+    qtcreator \
+    htop \
+    man \
+    meld \
+    silversearcher-ag \
+    terminator \
+    tig \
+    valgrind \
+    iputils-ping \
+    ipython \
+    python-scipy \
+    python-wstool \
+    python-networkx \
+    python-pip  \
     python3-vcstool \
     python-rosinstall \
     python-catkin-tools \
