@@ -1,4 +1,4 @@
-FROM osrf/ros:melodic-desktop-full
+FROM osrf/ros:melodic-desktop-full-bionic
 
 LABEL maintainer="Yue Erro <yue.erro@pal-robotics.com>"
 
@@ -9,7 +9,7 @@ WORKDIR $REPO_WS
 ARG IMAGE_NAME
 ENV IMG_NAME=$IMAGE_NAME
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
     libv4l-dev \
     libv4l2rds0 \
