@@ -10,7 +10,7 @@ git clone git@github.com:YueErro/dockers.git ~/git/dockers
 * [Requirements](#requirements)
 * [Docker build and run](#docker-build-and-run)
 * [Useful information](#useful-information)
-  - [Share files between docker container and host machine](#share-files-between-docker-container-and-host-machine)
+  - [Compile an already compiled workspace with a different ROS distro](#compile-an-already-compiled-workspace-with-a-different-ros-distro)
   - [New terminal in the same docker container](#new-terminal-in-the-same-docker-container)
 * [References](#references)
 
@@ -31,21 +31,13 @@ bash run.sh <nvidia/intel>
 
 ### Useful information
 
-#### Share files between docker container and host machine
-These docker containers automatically share the users home directory. It has been added a shared directory in order to have organized the workspaces used in dockers: `~/git/dockers/shared`
-```sh
-.
-|__ros
-|   |__kinetic
-|   |__melodic
-|__tiago
-|   |__kinetic
-|   |__melodic
-|__tiago_dual
-    |__kinetic
-    |__melodic
+#### Compile an already compiled workspace with a different ROS distro
+It can be done generating a new *catking profile* using `catkin_tools` (`sudo apt-get install python-catkin-tools`):
 ```
-Keep in mind that anything there will be available in the docker and in your local machine.
+catkin config --profile <profile_name> -x _<profile_name>
+catkin build --profile <profile_name>
+```
+*`_<profile_name>` can be different from `<profile_name>` but it is recommended to be something similar to the `<profile_name>`.*
 
 #### New terminal in the same docker container
 It can be opened as many as wanted terminal in the same docker container by just executing the following command in an already running docker container:

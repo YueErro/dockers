@@ -7,8 +7,7 @@ Follow the Pull Request (PR) Gitflow:
 6. Make sure to merge the latest from `upstream` before making a PR!
 7. Submit a PR so that your changes can be reviewed
 
-**If you wanna add a new Dockerfile follow the current file structure making sure you provide the following files and you update the README.md accordingly:**
+**If you want to add a new Dockerfile follow the current file structure making sure you provide the following files:**
 * `build.sh`
 * `Dockerfile`
-* Soft link to `pal_docker.sh`
-* Shared folder containing `.gitignore`
+* `run.sh`
