@@ -9,7 +9,7 @@ WORKDIR $REPO_WS
 ARG IMAGE_NAME
 ENV IMG_NAME=$IMAGE_NAME
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
     libv4l-dev \
     libv4l2rds0 \
