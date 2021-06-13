@@ -9,6 +9,7 @@ WORKDIR $REPO_WS
 ARG IMAGE_NAME
 ENV IMG_NAME=$IMAGE_NAME
 
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
     libv4l-dev \
