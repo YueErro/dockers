@@ -18,7 +18,7 @@ main()
   elif [ $1 = "nvidia" ]; then
     rocker --nvidia --x11 --user --home ros2-humble
   elif [ $1 = "intel" ]; then
-    rocker --x11 --user --home ros-humble --devices /dev/dri/card0
+    rocker --x11 --user --home ros2-humble --devices /dev/dri/card0
   else
     usage
   fi
