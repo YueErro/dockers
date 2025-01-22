@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated --no-install-re
     ipython3 \
     libgl1-mesa-dri \
     libgl1-mesa-glx \
+    libserial-dev \
     locales \
     man \
     meld \
@@ -37,6 +38,7 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated --no-install-re
     psmisc \
     python3-colcon-clean \
     python3-colcon-common-extensions \
+    python3-colcon-ros-distro \
     python3-flake8-docstrings \
     python3-networkx \
     python3-pip  \
@@ -48,11 +50,18 @@ RUN apt-get update && apt-get install -y --allow-unauthenticated --no-install-re
     python3-wstool \
     python3-yaml \
     qtcreator \
+    ros-$ROS_DISTRO-ament-cmake-clang-format\
+    ros-$ROS_DISTRO-hardware-interface \
+    ros-$ROS_DISTRO-nav2-bringup \
+    ros-$ROS_DISTRO-nav2-common \
+    ros-$ROS_DISTRO-rplidar-ros \
+    ros-$ROS_DISTRO-v4l2-camera \
     silversearcher-ag \
     ssh \
     terminator \
     tig \
     tmux \
+    unzip \
     valgrind \
     vim \
     wget \
