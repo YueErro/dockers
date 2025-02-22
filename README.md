@@ -81,6 +81,7 @@ These docker containers automatically share the users home directory. It has bee
 |   |__noetic
 |__ros2
 |   |__humble
+|   |__jazzy
 |__tiago
 |   |__noetic
 |__tiago_dual
